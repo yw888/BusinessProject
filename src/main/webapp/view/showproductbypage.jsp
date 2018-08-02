@@ -6,10 +6,24 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+	<style>
+		.fl{float:left;}
+		.fr{float:right;}
+		.page-title .modular{display:block;}
+		.page-title{border-bottom:1px #ddd solid;overflow:hidden;padding:5px 0;margin-bottom:8px;}
+		.page-title i{background:url('../images/admin_bg.png') -4px -44px;display:inline-block;width:23px;height:19px;position:relative;top:3px;margin-right:5px;}
+		.pt-link-btn{font-size:13px;background:#96aecd;display:block;padding:5px 8px;border-radius:2px;color:#fff;cursor:pointer;}
+		.pt-link-btn:hover{background:#a0b7d4;}
+		.page-title em{font-style:normal;color:#3d3d3d;font-size:15px;font-weight:bold;}
+	</style>
 </head>
 <body>
-	<h1 align="center">商品列表</h1>
-	<table align="center" border="1" cellpadding="0" cellspacing="0" width="88%">
+	<div class="page-title">
+		<span class="modular fl"><i></i><em>商品列表</em></span>
+		<span class="modular fr"><a href="addproduct.jsp" class="pt-link-btn">+添加商品</a></span>
+	</div>
+	<br>
+	<table align="center" border="1" cellpadding="0" cellspacing="0" width="100%">
 		<tr>
 			<th>商品id</th>
 			<th>商品名称</th>

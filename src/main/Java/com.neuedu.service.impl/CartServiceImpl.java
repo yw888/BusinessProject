@@ -4,12 +4,14 @@ import java.util.List;
 
 import com.neuedu.dao.CartDao;
 import com.neuedu.dao.impl.jdbc.CartDaoImpl;
+import com.neuedu.dao.impl.jdbc.mybatis.CartDaoMybatisImpl;
 import com.neuedu.entity.Cart;
 import com.neuedu.service.CartService;
 
 public class CartServiceImpl implements CartService {
 
-	CartDao cartDao=new CartDaoImpl();
+//	CartDao cartDao=new CartDaoImpl();
+CartDao cartDao=new CartDaoMybatisImpl();
 	
 	@Override
 	public boolean addCart(Cart cart) {

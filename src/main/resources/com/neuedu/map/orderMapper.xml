@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.neuedu.dao.OrderDao">
+   <insert id="createOrder" parameterType="com.neuedu.entity.UserOrder" statementType="PREPARED" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+      insert into userorder(order_no,user_id,shipping_id,payment,payment_type,postage,status,create_time)
+	   values(#{order_no},#{user_id},#{shipping_id},#{payment},#{payment_type},#{postage},#{status},now())
+   </insert>
+</mapper>

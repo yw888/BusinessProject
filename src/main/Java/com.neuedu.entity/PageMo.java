@@ -39,6 +39,13 @@ public class PageMo<T> implements Serializable {
 	public void setCurrentPage(int currentPage) {
 		this.currentPage = currentPage;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "PageMo{" +
+				"data=" + data +
+				", totalPage=" + totalPage +
+				", currentPage=" + currentPage +
+				'}';
+	}
 }

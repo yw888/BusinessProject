@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.neuedu.dao.ProductDao">
+    <update id="updateProduct" parameterType="Product">
+        update product
+        <set>
+            <!--<if test="name!=null">name=#{name}</if>-->
+            <!--<if test="desc!=null">pdesc=#{desc}</if>-->
+            <!--<if test="price &gt; 0">price=#{price}</if>-->
+            <!--<if test="rule!=null">rule=#{rule}</if>-->
+            <!--<if test="image!=null">image=#{image}</if>-->
+            <if test="stock &gt; 0">stock=#{stock}</if>
+        </set>
+        where id=#{id}
+    </update>
+</mapper>

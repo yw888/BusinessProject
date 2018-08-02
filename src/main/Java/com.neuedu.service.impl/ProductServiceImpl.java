@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.neuedu.dao.ProductDao;
 import com.neuedu.dao.impl.jdbc.ProductDaoImpl;
+import com.neuedu.dao.impl.jdbc.mybatis.ProductMybatisImpl;
 import com.neuedu.entity.Cart3;
 import com.neuedu.entity.CartItem;
 import com.neuedu.entity.PageMo;
@@ -14,8 +15,8 @@ import com.neuedu.service.ProductService;
 public class ProductServiceImpl implements ProductService {
 
 	
-	ProductDao productDao=new ProductDaoImpl();
-	
+//	ProductDao productDao=new ProductDaoImpl();
+ProductDao productDao=new ProductMybatisImpl();
 	@Override
 	public boolean addProduct(Product product) {
 		// TODO Auto-generated method stub

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.neuedu.entity.Product">
+    <!--分页查询-->
+    <select id="findTotalCount" resultType="java.lang.Integer">
+        select count(id) from product
+    </select>
+    <select id="findProductbyPage" parameterType="Map" resultMap="ProductMap">
+        select id,name,pdesc,price,rule,image,stock from  product limit #{offset},#{pageSize}
+    </select>
+    <resultMap id="ProductMap" type="Product">
+        <id property="id" column="id"></id>
+        <result property="name" column="name"></result>
+        <result property="desc" column="pdesc"></result>
+        <result property="price" column="price"></result>
+        <result property="rule" column="rule"></result>
+        <result property="image" column="image"></result>
+        <result property="stock" column="stock"></result>
+    </resultMap>
+    <insert id="addProduct" parameterType="Product" keyColumn="id" keyProperty="id"
+        statementType="PREPARED" useGeneratedKeys="true">
+        insert into product(name,pdesc,price,rule,image,stock) values (#{name},#{desc},#{price},#{rule},#{image},#{stock})
+    </insert>
+    <update id="updateProduct" parameterType="Map">
+        update product set name=#{name},pdesc=#{desc},price=#{price},rule=#{rule},image=#{image},stock=#{stock} where id=#{id}
+    </update>
+    <delete id="deleteProduct" parameterType="int">
+        delete from product where id=#{id}
+    </delete>
+    <select id="findById" parameterType="int" resultMap="ProductMap">
+        select id,name,pdesc,price,rule,image,stock from  product where id=#{id}
+    </select>
+</mapper>

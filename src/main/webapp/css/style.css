@@ -321,7 +321,7 @@ transform:rotate(360deg);
   left: 12px;
   width: 25px;
   height: 19px;
-  background: url("../Images/arrow.png") 0 0 no-repeat;
+  background: url("../images/arrow.png") 0 0 no-repeat;
 }
 
 ::-moz-focus-inner {
@@ -373,7 +373,7 @@ text-align:center;
 }
     .box{width:35%;
     	height:50%;
-    	background:#373737 url("../Images/bg.png") 0 0 repeat;
+    	background:#373737 url("../images/bg.png") 0 0 repeat;
     	border:12px solid #000;
     	border-radius:5px;
 		  box-shadow:0 0 50px #fff; 

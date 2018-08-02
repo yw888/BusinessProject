@@ -56,9 +56,18 @@ public class Product implements Serializable{
 		this.price = price;
 		this.rule = rule;
 		this.image = image;
-		this.stock=stock;
 	}
-	
+
+	public Product(int id, String name, String desc, double price, String rule, String image, int stock) {
+		this.id = id;
+		this.name = name;
+		this.desc = desc;
+		this.price = price;
+		this.rule = rule;
+		this.image = image;
+		this.stock = stock;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -106,19 +115,17 @@ public class Product implements Serializable{
 	public void setStock(int stock) {
 		this.stock = stock;
 	}
+
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", desc=" + desc + ", price=" + price + ", rule=" + rule + "]";
+		return "Product{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", desc='" + desc + '\'' +
+				", price=" + price +
+				", rule='" + rule + '\'' +
+				", image='" + image + '\'' +
+				", stock=" + stock +
+				'}';
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

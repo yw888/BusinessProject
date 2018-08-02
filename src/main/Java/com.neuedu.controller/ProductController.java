@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.alibaba.fastjson.JSONArray;
 import com.neuedu.entity.PageMo;
 import com.neuedu.entity.Product;
 import com.neuedu.service.ProductService;
@@ -40,6 +41,9 @@ public class ProductController extends HttpServlet{
 			}else if(operation.equals("5")) {
 				//查询单个
 				findById(request,response);
+			}else if(operation.equals("6")) {
+				//查询单个
+				findProductById(request,response);
 			}
 		}
 		
@@ -210,7 +214,20 @@ String sid=request.getParameter("id");
     	
     	return;
     }
-    public Product findProductById(int id) {
+
+    public  void findProductById(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException {
+		String sid=request.getParameter("id");
+		int id=0;
+		try {
+			id=Integer.parseInt(sid);
+		}catch (NumberFormatException e){
+			e.printStackTrace();
+		}
+		System.out.println(findProductById(id));
+		 String json=JSONArray.toJSONString(findProductById(id));
+		response.getWriter().print(json);
+	}
+    public Product  findProductById(int id) {
     	return pService.findProductById(id);
     }
 
